@@ -12,7 +12,12 @@ class SurveysController < ApplicationController
   end
 
   def create
-    @survey = Survey.new
+    @survey = Survey.new(survey_params)
+    if @survey.save
+        redirect_to @survey
+    else
+        render :new
+    end
   end
 
 
@@ -23,7 +28,7 @@ class SurveysController < ApplicationController
 
   private
   def survey_params
-
+    params.require(:survey).permit(:title, :description)
   end
 
 end
