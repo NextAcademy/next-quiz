@@ -10,11 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< d830897663d310b42c1de0c6b06b50b12e54a3fc
 ActiveRecord::Schema.define(version: 20170203052411) do
+=======
+ActiveRecord::Schema.define(version: 20170203080720) do
+>>>>>>> Models for creating survey
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< d830897663d310b42c1de0c6b06b50b12e54a3fc
+=======
+  create_table "answers", force: :cascade do |t|
+    t.string   "description"
+    t.json     "key_value_pairs"
+    t.integer  "question_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "survey_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+  end
+
+  create_table "result_pages", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "image"
+    t.integer  "survey_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["survey_id"], name: "index_result_pages_on_survey_id", using: :btree
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+>>>>>>> Models for creating survey
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
