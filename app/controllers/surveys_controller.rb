@@ -20,15 +20,24 @@ class SurveysController < ApplicationController
     end
   end
 
-
   def edit
     @survey = Survey.find(params[:id])
   end
 
+  def update
+    @survey = Survey.find(params[:id])
+    if @survey.update_attributes(survey_params)
+      redirect_to @survey
+    end
+  end
 
   private
   def survey_params
-    params.require(:survey).permit(:title, :description)
+    params.require(:survey).permit(
+      :title,
+      :description,
+      questions_attributes: [:id, :description, :_destroy]
+      )
   end
 
 end
