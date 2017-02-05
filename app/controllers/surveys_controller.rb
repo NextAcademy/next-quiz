@@ -16,8 +16,6 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     @survey.questions.build
 
-    byebug
-    
     if @survey.save
         redirect_to @survey
     else
@@ -41,7 +39,12 @@ class SurveysController < ApplicationController
     params.require(:survey).permit(
       :title,
       :description,
-      questions_attributes: [:id, :description, :_destroy]
+      questions_attributes: [
+        :id, 
+        :description, 
+        :_destroy,
+        answers_attributes: [:id, :description, :_destroy, :question_id]
+        ]
       )
   end
 

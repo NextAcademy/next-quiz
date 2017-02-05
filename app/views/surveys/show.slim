@@ -6,3 +6,5 @@ h3 Questions
 #questions
     - @survey.questions.each do |question|
         p =question.description
+        - question.answers.each do |answer|
+            li =answer.description
