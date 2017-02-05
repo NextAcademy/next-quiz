@@ -1,2 +1,8 @@
 h1 =@survey.title
-p =@survey.description
+#survey
+    p =@survey.description
+
+h3 Questions
+#questions
+    - @survey.questions.each do |question|
+        p =question.description

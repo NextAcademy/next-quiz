@@ -9,10 +9,15 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    @survey.questions.build
   end
 
   def create
     @survey = Survey.new(survey_params)
+    @survey.questions.build
+
+    byebug
+    
     if @survey.save
         redirect_to @survey
     else

@@ -46,6 +46,7 @@ GEM
       bcrypt
       email_validator (~> 1.4)
       rails (>= 3.1)
+    cocoon (1.2.9)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -169,7 +170,11 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+<<<<<<< 75cf4757593ac2c1ed7b3e9ddf06cea078207375
   clearance
+=======
+  cocoon
+>>>>>>> Can now create survey which has many questions
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
