@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Survey, :type => :model do
-  it "creates a survey" do
-    survey = Survey.new(title:"What is your super power?", description: "Find out your super powers!")
+  it "can create a Survey in the database" do
+    survey = Survey.create(title:"What is your super power?", description: "Find out your super powers!")
     expect(Survey.last).to eq(survey)
   end
 end
