@@ -170,11 +170,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-<<<<<<< 75cf4757593ac2c1ed7b3e9ddf06cea078207375
   clearance
-=======
   cocoon
->>>>>>> Can now create survey which has many questions
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
