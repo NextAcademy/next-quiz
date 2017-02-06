@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'clearance'
 gem 'slim'
 gem 'simple_form'
+gem 'cocoon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
