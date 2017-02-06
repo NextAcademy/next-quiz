@@ -1,7 +1,6 @@
 .nested-fields
     = f.input :description
 
-    h3 Answers
     #answers
         = f.simple_fields_for :answers do |answer|
             = render 'answer_fields', f: answer
