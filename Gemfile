@@ -18,10 +18,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'clearance'
 gem 'slim'
 gem 'simple_form'
-<<<<<<< 75cf4757593ac2c1ed7b3e9ddf06cea078207375
-=======
-gem 'cocoon'
->>>>>>> Can now create survey which has many questions
 
 group :development, :test do
   gem 'byebug', platform: :mri
