@@ -10,6 +10,14 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @survey.questions.build
+    
+    # 4.times do 
+    #   @survey.questions.build
+    #   @survey.questions.each do |question|
+    #     question.answers.build
+    #   end
+    # end
+
   end
 
   def create

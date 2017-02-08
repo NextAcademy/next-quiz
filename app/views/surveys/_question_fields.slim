@@ -1,8 +1,9 @@
 .nested-fields
+    / = f.options
     = f.input :description
 
     #answers
-        = f.simple_fields_for :answers do |answer|
+    = f.simple_fields_for :answers do |answer|
             = render 'answer_fields', f: answer
         .links
             = link_to_add_association 'add answer', f, :answers
