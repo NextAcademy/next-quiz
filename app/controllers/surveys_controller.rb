@@ -14,7 +14,6 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
-    byebug
     if @survey.save
         redirect_to @survey
     else
