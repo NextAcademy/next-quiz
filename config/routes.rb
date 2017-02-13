@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  root 'welcome#index'
-
+  root 'surveys#new'
   resources :surveys
 end

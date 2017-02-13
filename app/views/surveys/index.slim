@@ -1,0 +1,8 @@
+h1 Surveys
+
+= @surveys.each_with_index do |survey,i|
+  p No. #{i+1}
+  li Title :         #{survey.title}
+  li Description :   #{survey.description}
+  li Question Count : #{survey.questions.count}
+  br

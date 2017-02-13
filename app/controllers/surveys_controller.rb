@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   def index
-    @survey = Survey.all
+    @surveys = Survey.all
   end
 
   def show
@@ -9,21 +9,12 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    @survey.questions.build
-    
-    # 4.times do 
-    #   @survey.questions.build
-    #   @survey.questions.each do |question|
-    #     question.answers.build
-    #   end
-    # end
-
+    @survey.questions.build.answers.build
   end
 
   def create
     @survey = Survey.new(survey_params)
-    @survey.questions.build
-
+    byebug
     if @survey.save
         redirect_to @survey
     else
@@ -48,10 +39,16 @@ class SurveysController < ApplicationController
       :title,
       :description,
       questions_attributes: [
-        :id, 
-        :description, 
+        :id,
+        :survey_id,
+        :description,
         :_destroy,
-        answers_attributes: [:id, :description, :_destroy, :question_id]
+        answers_attributes: 
+          [ :id, 
+            :description, 
+            :_destroy, 
+            :question_id
+          ]
         ]
       )
   end

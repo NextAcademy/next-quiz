@@ -1,12 +1,12 @@
 = simple_form_for @survey do |f|
-    = f.input :title
-    = f.input :description
+  = f.input :title
+  = f.input :description
 
-    h2 Questions
-    #questions
-        = f.simple_fields_for :questions do |question|
-            = render 'question_fields', f: question
-        .links
-            = link_to_add_association 'add question', f, :questions
+  h2 Questions
+  #questions
+    = f.simple_fields_for :questions do |question|
+      = render 'question_fields', f: question
+    .links
+      = link_to_add_association 'add question', f, :questions
 
-    = f.submit
+  = f.submit
