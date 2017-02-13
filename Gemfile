@@ -16,9 +16,17 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'clearance'
+gem 'slim'
+gem 'simple_form'
+gem 'cocoon'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :development do
