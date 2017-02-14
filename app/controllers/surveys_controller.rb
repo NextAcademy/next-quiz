@@ -12,13 +12,11 @@ class SurveysController < ApplicationController
 
   def new
       @survey = Survey.new
-      authorize @survey
       @survey.questions.build.answers.build
   end
 
   def create
     @survey = Survey.new(survey_params)
-    authorize @survey
     @survey.user_id = current_user.id
 
     if @survey.save
@@ -31,11 +29,11 @@ class SurveysController < ApplicationController
   def edit
     @survey = Survey.find(params[:id])
     authorize @survey
-
   end
 
   def update
     @survey = Survey.find(params[:id])
+    byebug
     if @survey.update_attributes(survey_params)
       redirect_to @survey
     end

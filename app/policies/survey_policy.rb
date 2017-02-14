@@ -6,14 +6,6 @@ class SurveyPolicy
     @survey = survey
   end
 
-  def new?
-    user.user?
-  end
-
-  def create?
-    user.user?
-  end
-
   def edit?
     user.user? && (survey.user == user) 
   end
@@ -21,6 +13,5 @@ class SurveyPolicy
   def update?
     user.user? && (survey.user == user) 
   end
-
 
 end
