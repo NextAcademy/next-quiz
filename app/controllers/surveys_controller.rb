@@ -11,13 +11,9 @@ class SurveysController < ApplicationController
   end
 
   def new
-    if signed_in?
       @survey = Survey.new
       authorize @survey
       @survey.questions.build.answers.build
-    else
-      redirect_to root_path
-    end
   end
 
   def create
