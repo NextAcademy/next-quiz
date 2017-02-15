@@ -20,6 +20,7 @@ gem 'slim'
 gem 'simple_form'
 gem 'cocoon'
 
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platform: :mri

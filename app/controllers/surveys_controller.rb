@@ -1,4 +1,7 @@
 class SurveysController < ApplicationController
+
+  before_action :is_signed_in?
+
   def index
     @surveys = Survey.all
   end
@@ -8,12 +11,12 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @survey = Survey.new
-    @survey.questions.build.answers.build
+      @survey = Survey.new
+      @survey.questions.build.answers.build
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    @survey = current_user.surveys.new(survey_params)
     if @survey.save
         redirect_to @survey
     else
@@ -23,6 +26,7 @@ class SurveysController < ApplicationController
 
   def edit
     @survey = Survey.find(params[:id])
+    authorize @survey
   end
 
   def update
@@ -51,5 +55,4 @@ class SurveysController < ApplicationController
         ]
       )
   end
-
 end
