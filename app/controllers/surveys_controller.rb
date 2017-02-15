@@ -22,9 +22,6 @@ class SurveysController < ApplicationController
     else
         render :new
     end
-
-    byebug
-
   end
 
   def edit
