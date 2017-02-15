@@ -16,14 +16,15 @@ class SurveysController < ApplicationController
   end
 
   def create
-    @survey = Survey.new(survey_params)
-    @survey.user_id = current_user.id
-
+    @survey = current_user.surveys.new(survey_params)
     if @survey.save
         redirect_to @survey
     else
         render :new
     end
+
+    byebug
+
   end
 
   def edit
@@ -33,7 +34,6 @@ class SurveysController < ApplicationController
 
   def update
     @survey = Survey.find(params[:id])
-    byebug
     if @survey.update_attributes(survey_params)
       redirect_to @survey
     end
