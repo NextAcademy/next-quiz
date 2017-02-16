@@ -9,3 +9,10 @@ h3 Questions
         - question.answers.each do |answer|
             li =answer.description
         br
+
+h3 Outcomes
+#outcomes
+    - @survey.outcomes.each do |outcome|
+        p =outcome.title
+        p =outcome.description
+

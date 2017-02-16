@@ -25,6 +25,7 @@ RSpec.describe Survey, :type => :model do
 
     describe "validates presence of association" do
       it { is_expected.to have_many(:questions) }
+      it { is_expected.to have_many(:outcomes) }
       it { is_expected.to belong_to(:user) }
     end
   end

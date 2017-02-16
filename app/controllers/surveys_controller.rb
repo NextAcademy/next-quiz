@@ -41,6 +41,10 @@ class SurveysController < ApplicationController
     params.require(:survey).permit(
       :title,
       :description,
+      outcomes_attributes: [
+        :title,
+        :description
+        ],
       questions_attributes: [
         :id,
         :survey_id,

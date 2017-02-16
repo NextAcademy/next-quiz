@@ -18,7 +18,7 @@ RSpec.describe Answer, :type => :model do
     
     describe "validates presence of attributes" do
       it { is_expected.to validate_presence_of(:description) }
-      it { is_expected.to validate_presence_of(:question_id) }
+      # it { is_expected.to validate_presence_of(:question_id) }
       # it { is_expected.to validate_presence_of(:key_value_pairs) }
     end
 
